@@ -6,7 +6,6 @@
   const heroArt = document.querySelector('.hero-art');
   const orbitalGraphic = heroArt?.querySelector('.orbital-art');
   const orbitRings = heroArt?.querySelector('.orbit-rings');
-  const ribbonGroup = heroArt?.querySelector('.ribbon-group');
   const waypointGroup = heroArt?.querySelector('.waypoints');
   const limeWaypoint = heroArt?.querySelector('.waypoint-lime');
   const targetMark = heroArt?.querySelector('.target-mark');
@@ -66,7 +65,6 @@
       heroArt.style.setProperty('--scroll-progress', scrollProgress.toFixed(3));
       orbitalGraphic.style.transform = `translate3d(0, ${scrollProgress * 24}px, 0) rotate(${-scrollProgress * 4}deg)`;
       orbitRings.style.transform = `rotate(${scrollProgress * 78}deg)`;
-      ribbonGroup.style.transform = `translateY(${scrollProgress * 18}px) rotate(${-scrollProgress * 9}deg)`;
       waypointGroup.style.transform = `translate(${scrollProgress * 16}px, ${-scrollProgress * 13}px)`;
       limeWaypoint.style.transform = `translate(${-scrollProgress * 35}px, ${scrollProgress * 25}px) scale(${1 - scrollProgress * 0.12})`;
       targetMark.style.transform = `translate(${-scrollProgress * 13}px, ${scrollProgress * 18}px)`;

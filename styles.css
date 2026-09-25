@@ -12,22 +12,17 @@
 .orbit-blue-a{stroke:var(--blue);stroke-width:2.8}
 .orbit-blue-b{opacity:.82}
 .ring-dash{stroke-width:2.6;stroke-dasharray:2 12}
-.ribbon-group{transform-box:view-box;transform-origin:350px 350px}
-.black-loop{fill:none;stroke:var(--ink);stroke-width:42;stroke-linecap:round}
-.black-loop-a{stroke-width:44}
-.black-loop-b{stroke-width:42}
 .waypoint-lime{transform-box:fill-box;transform-origin:center}
-@media(prefers-reduced-motion:reduce){.orbital-art,.orbit-rings,.ribbon-group,.waypoints,.waypoint-lime,.target-mark{transform:none!important}}
+@media(prefers-reduced-motion:reduce){.orbital-art,.orbit-rings,.waypoints,.waypoint-lime,.target-mark{transform:none!important}}
 :root{--bone:#eee9df}
 .hero-art:before{background:radial-gradient(circle,#f1ece2 0%,var(--bone) 59%,transparent 72%)}
 .outline-text{-webkit-text-stroke:0;color:var(--blue)}
-.orbit-drift,.ribbon-drift{transform-box:view-box;transform-origin:350px 350px}
-.orbit-spin-a,.orbit-spin-b,.loop-spin-a,.loop-spin-b{transform-box:view-box;transform-origin:350px 350px}
+.orbit-drift{transform-box:view-box;transform-origin:350px 350px}
+.orbit-spin-a,.orbit-spin-b{transform-box:view-box;transform-origin:350px 350px}
 .orbital-node{transform-box:view-box;transform-origin:350px 350px;animation:orbital-node 28s linear infinite}
 .orbit-drift{animation:orbit-drift 90s linear infinite}
-.ribbon-drift{animation:ribbon-drift 20s ease-in-out infinite}
-.orbit-spin-a,.loop-spin-a{animation:spin-forward 68s linear infinite}
-.orbit-spin-b,.loop-spin-b{animation:spin-reverse 68s linear infinite}
+.orbit-spin-a{animation:spin-forward 68s linear infinite}
+.orbit-spin-b{animation:spin-reverse 68s linear infinite}
 .orb-float{transform-box:view-box;transform-origin:536px 203px;animation:orb-float 5s ease-in-out infinite}
 .waypoint-blue{animation:waypoint-signal 3.2s ease-in-out infinite}
 .target-pulse{fill:none;stroke:var(--blue);stroke-width:1.5;transform-box:fill-box;transform-origin:center;animation:target-pulse 3.8s ease-out infinite}
@@ -35,8 +30,8 @@
 @keyframes orbital-node{to{transform:rotate(360deg)}}
 @keyframes spin-forward{to{transform:rotate(360deg)}}
 @keyframes spin-reverse{to{transform:rotate(-360deg)}}
-@keyframes ribbon-drift{0%,100%{transform:rotate(-1deg)}50%{transform:rotate(1deg)}}
 @keyframes orb-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 @keyframes waypoint-signal{0%,100%{opacity:.55}50%{opacity:1}}
 @keyframes target-pulse{0%{transform:scale(.7);opacity:.8}90%,100%{transform:scale(1.45);opacity:0}}
-@media(prefers-reduced-motion:reduce){.orbit-drift,.ribbon-drift,.orbit-spin-a,.orbit-spin-b,.loop-spin-a,.loop-spin-b,.orbital-node,.orb-float,.waypoint-blue,.target-pulse{animation:none!important}}
+@media(prefers-reduced-motion:reduce){.orbit-drift,.orbit-spin-a,.orbit-spin-b,.orbital-node,.orb-float,.waypoint-blue,.target-pulse{animation:none!important}}
+.planet-image{filter:drop-shadow(0 20px 22px #1114)}
