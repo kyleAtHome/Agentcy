@@ -11,7 +11,7 @@
   const navLinks = document.querySelector('.topnav');
   const menu = document.querySelector('.menu-toggle');
   const duration = 1200;
-  const glyphs = Array.from('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!?:;+-=*/_[]{}()<>|#$%&@^~アイウエオカキクケコサシスセソタチツテトナニヌネノあいうえおかきくけこさしすせそたちつてとなにぬねの漢字人工知能未来世界情報機械学習中文系统网络连接数据中国龙门天地風水火山川海空星光雨雪电脑科技智能變數學習韓國한글αβγδεζηθλμξπρσφχψωΔΘΛΞΠΣΦΨΩ∞≠≤≥±×÷√∫∑∆');
+  const glyphs = Array.from('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789');
   let sticky = false;
   let morphCompleted = false;
   let morphStartedAt = 0;
