@@ -26,17 +26,43 @@
     .bloom-spin{transform-origin:300px 250px;animation:spin 26s linear infinite}.bloom-core{transform-origin:300px 250px;animation:breathe 4s ease-in-out infinite}.data-flow{stroke-dasharray:12 14;animation:flow 2.4s linear infinite}.data-flow.alt{animation-direction:reverse;animation-duration:3.2s}.ribbon-node{filter:drop-shadow(0 0 8px #d9ff3f88)}
     .constellation-orbit{transform-origin:300px 250px;animation:spin 36s linear infinite}.constellation-core{transform-origin:300px 250px;animation:slow-pulse 3.6s ease-in-out infinite}.spark{transform-origin:center;animation:pulse 2.2s ease-in-out infinite}.spark:nth-child(2n){animation-delay:-.8s}
     .genre{margin-top:clamp(90px,13vw,180px)}.genre h2{font-size:clamp(42px,7vw,90px);line-height:.9;letter-spacing:-.085em;margin:0 0 18px}.genre-intro{font-size:15px;line-height:1.6;color:#555;max-width:560px;margin:0 0 42px}.art-marathon{background:radial-gradient(circle at 50% 50%,#20232a 0,#101216 68%,#090a0d 100%);color:#eee9df}.art-marathon .label{color:#a5a8aa}.art-marathon .label strong{color:#e1ff35}.art-noir{background:linear-gradient(155deg,#11131c 0%,#171b2c 55%,#251526 100%);color:#eceaf3}.art-noir .label{color:#b1b0c1}.art-noir .label strong{color:#54d9ff}.art-cyber{background:radial-gradient(circle at 50% 48%,#2a1238 0,#130d20 50%,#0c0d16 100%);color:#f4efff}.art-cyber .label{color:#bab1ca}.art-cyber .label strong{color:#ff53cb}.noir-rain{stroke-dasharray:2 16;animation:rain 1.1s linear infinite}.noir-rain.slow{animation-duration:1.7s}.scanline{animation:scan 3.8s ease-in-out infinite}.circuit{stroke-dasharray:8 10;animation:flow 1.8s linear infinite}.neon-pulse{animation:neon 2s ease-in-out infinite}
+    .study-group{margin-top:clamp(90px,13vw,180px)}.study-group h2{font-size:clamp(42px,7vw,90px);line-height:.9;letter-spacing:-.085em;margin:0 0 18px}.study-intro{font-size:15px;line-height:1.6;color:#555;max-width:620px;margin:0 0 42px}.brand-grid{stroke:#111;stroke-opacity:.15;stroke-width:1;fill:none}.brand-path{fill:none;stroke:#3347ff;stroke-width:2}.brand-orbit{fill:none;stroke:#111;stroke-opacity:.28;stroke-width:1}.brand-stream{stroke-dasharray:5 9;animation:flow 2.8s linear infinite}.brand-signal{filter:drop-shadow(0 0 8px #d9ff3f88)}.marathon-art{background:radial-gradient(circle at 50% 50%,#171c1a,#090c0d 72%);color:#e8ede4}.marathon-art .label{color:#a7b1aa}.marathon-art .label strong{color:#d9ff3f}.m-fire{fill:#ff7048}.m-cyan{stroke:#62d8eb}.m-trace{fill:none;stroke:#d9ff3f;stroke-width:1.5;stroke-dasharray:3 8;animation:flow 1.7s linear infinite}.m-trace.rev{animation-direction:reverse;animation-duration:2.6s}.m-radar{transform-origin:300px 250px;animation:spin 12s linear infinite}.m-blip{filter:drop-shadow(0 0 6px #d9ff3f)}
+    .anchor-direction{border:1px solid #1113;margin:35px 0 0;display:grid;grid-template-columns:1.2fr .8fr;min-height:390px;background:#eee9df}.anchor-art{min-height:390px;position:relative;display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle at 50% 50%,#f7f5ef 0,#eee9df 68%)}.anchor-art svg{max-width:700px}.anchor-copy{padding:clamp(26px,4vw,58px);border-left:1px solid #1112;display:flex;flex-direction:column;justify-content:center}.anchor-copy h2{font-size:clamp(35px,5vw,64px);line-height:.92;letter-spacing:-.085em;margin:20px 0 16px}.anchor-copy p{font-size:14px;line-height:1.7;color:#555;max-width:430px;margin:0}.anchor-copy .motion-note{margin-top:26px}.anchor-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:25px}.anchor-tags span{border:1px solid #1113;padding:7px 9px;color:#555}
+    .intent-pulse{transform-origin:300px 250px;animation:slow-pulse 3.8s ease-in-out infinite}.route-dash{stroke-dasharray:5 8;animation:flow 2.8s linear infinite}.route-dash.reverse{animation-direction:reverse;animation-duration:3.6s}.output-pulse{transform-origin:center;animation:pulse 2.4s ease-in-out infinite}
     @keyframes rain{to{stroke-dashoffset:-36;transform:translateY(28px)}}@keyframes scan{0%,100%{transform:translateY(-84px);opacity:0}20%,80%{opacity:.8}50%{transform:translateY(82px);opacity:.8}}@keyframes neon{0%,100%{opacity:.62;filter:drop-shadow(0 0 2px currentColor)}50%{opacity:1;filter:drop-shadow(0 0 12px currentColor)}}
     @keyframes spin{to{transform:rotate(360deg)}}@keyframes flow{to{stroke-dashoffset:-52}}@keyframes pulse{0%,100%{opacity:.45;transform:scale(.86)}50%{opacity:1;transform:scale(1.12)}}@keyframes breathe{0%,100%{transform:scale(.97)}50%{transform:scale(1.035)}}@keyframes slow-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.045)}}
     @media(max-width:900px){.options{grid-template-columns:1fr}.art{height:min(84vw,470px)}.copy{padding-inline:22px}.copy h2{font-size:32px}}
+    @media(max-width:900px){.anchor-direction{grid-template-columns:1fr}.anchor-copy{border-left:0;border-top:1px solid #1112}.anchor-art{min-height:320px}}
     @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
   </style>
 </head>
 <body>
   <main class="page">
     <header class="top"><a class="brand" href="index.html">agent<b>cy</b><sup>°</sup></a><span class="mono eyebrow">AGENTCY / VISUAL STUDIES<br />ATL · 003 DIRECTIONS</span></header>
-    <h1>Three ways to<br />make intelligence move.</h1>
-    <p class="intro">Animated hero-art concepts for the Agentcy landing page. Each uses the same bone, ink, electric blue, and signal yellow palette, with a different motion language.</p>
+    <h1>A visual system for<br />intelligence in motion.</h1>
+    <p class="intro">One brand-led recommendation, three brand-native studies, six broad visual explorations, and three original tactical sci-fi studies. Motion stays controlled and purposeful: clear enough to read, distinctive enough to remember.</p>
+
+    <section class="anchor-direction" aria-labelledby="anchor-title">
+      <div class="anchor-art">
+        <span class="label a">BRAND ANCHOR / 01<br /><strong>HUMAN INTENT × MACHINE LEVERAGE</strong></span>
+        <span class="label b">SIGNAL ALIGNED<br />OUTPUT / IN MOTION</span>
+        <svg viewBox="0 0 600 500" role="img" aria-label="Two distinct signal paths meet at an open geometric decision gate, then continue as one bright route">
+          <defs><radialGradient id="intent-core"><stop stop-color="#f7f5ef"/><stop offset=".72" stop-color="#eee9df"/><stop offset="1" stop-color="#eee9df" stop-opacity="0"/></radialGradient><linearGradient id="output-line" x1="0" x2="1"><stop stop-color="#3347ff"/><stop offset="1" stop-color="#d9ff3f"/></linearGradient></defs>
+          <circle cx="300" cy="250" r="203" fill="url(#intent-core)"/>
+          <g fill="none" stroke="#111" stroke-opacity=".16" stroke-width="1"><path d="M72 140h456M72 180h456M72 220h456M72 260h456M72 300h456M72 340h456"/><path d="M100 104v292M150 104v292M450 104v292M500 104v292"/></g>
+          <path d="M55 180H212l55 70h66" fill="none" stroke="#111" stroke-width="3" stroke-linecap="square"/><path d="M55 320H212l55-70h66" fill="none" stroke="#3347ff" stroke-width="3" stroke-linecap="square"/>
+          <path d="M55 180H212l55 70h66" fill="none" stroke="#111" stroke-opacity=".48" stroke-width="1" class="route-dash"/><path d="M55 320H212l55-70h66" fill="none" stroke="#3347ff" stroke-opacity=".55" stroke-width="1" class="route-dash reverse"/>
+          <g class="intent-pulse"><path d="M285 160h30l53 90-53 90h-30l53-90z" fill="#111"/><path d="M296 190h8l36 60-36 60h-8l36-60z" fill="#eee9df"/><path d="M295 250h45" stroke="#3347ff" stroke-width="3"/><circle cx="300" cy="250" r="5" fill="#d9ff3f"/></g>
+          <path d="M340 250h205" fill="none" stroke="url(#output-line)" stroke-width="3"/><path d="M340 250h205" fill="none" stroke="#3347ff" stroke-width="1" stroke-dasharray="3 8" class="route-dash"/>
+          <g fill="none" stroke="#111" stroke-opacity=".35"><circle cx="408" cy="250" r="18"/><circle cx="476" cy="250" r="28"/><circle cx="534" cy="250" r="39"/></g>
+          <circle cx="408" cy="250" r="4" fill="#3347ff"/><circle cx="476" cy="250" r="5" fill="#d9ff3f" stroke="#111"/><circle cx="534" cy="250" r="6" fill="#3347ff"/>
+          <circle r="9" fill="#d9ff3f" stroke="#111" stroke-width="1.5"><animateMotion dur="5.5s" repeatCount="indefinite" path="M55 180H212l55 70h66h205"/></circle>
+          <circle r="7" fill="#3347ff" stroke="#eee9df" stroke-width="2"><animateMotion dur="6.1s" repeatCount="indefinite" path="M55 320H212l55-70h66h205"/></circle>
+          <text x="99" y="160" fill="#555" font-family="DM Mono,monospace" font-size="8" letter-spacing="1.2">HUMAN SIGNAL</text><text x="99" y="345" fill="#3347ff" font-family="DM Mono,monospace" font-size="8" letter-spacing="1.2">MACHINE CAPABILITY</text><text x="432" y="215" fill="#555" font-family="DM Mono,monospace" font-size="8" letter-spacing="1.2">USEFUL WORK</text>
+        </svg>
+      </div>
+      <div class="anchor-copy"><span class="mono number">RECOMMENDED / BRAND-FIT STUDY</span><h2 id="anchor-title">Useful intelligence,<br />in motion.</h2><p>Two distinct inputs—human judgment and machine capability—meet at a precise decision gate, then leave as one clear path into action. The movement is deliberate, legible, and rooted in the Agentcy promise rather than a borrowed sci-fi world.</p><div class="anchor-tags mono"><span>BONE / INK</span><span>AGENTCY BLUE</span><span>SIGNAL YELLOW</span></div><span class="motion-note mono"><i></i> CONVERGE → RESOLVE → MOVE</span></div>
+    </section>
 
     <section class="options" aria-label="Animated hero graphic directions">
       <article class="option">
@@ -143,6 +169,108 @@
             </svg>
           </div>
           <div class="copy"><span class="mono number">DIRECTION 06 / CYBERPUNK</span><h2>Ghost in the grid</h2><p>A layered circuit maze around a faceted core. Magenta and cyan paths race through the system while a yellow pulse marks the human-guided route.</p><span class="motion-note mono"><i></i> CIRCUIT PULSE + ROUTING</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="study-group" aria-labelledby="brand-study-heading">
+      <span class="mono eyebrow">BRAND-NATIVE STUDIES / NO BORROWED WORLD</span>
+      <h2 id="brand-study-heading">Three more, built<br />from Agentcy itself.</h2>
+      <p class="study-intro">A calmer, more ownable visual language: useful signals, human choices, and systems becoming real. Clear geometry first; motion gives each scene a pulse.</p>
+      <div class="options">
+        <article class="option">
+          <div class="art">
+            <span class="label a">07 / OPPORTUNITY FIELD<br /><strong>SCAN · SELECT · ACT</strong></span><span class="label b">SIGNAL MAP<br />09 NODES / 01 PRIORITY</span>
+            <svg viewBox="0 0 600 500" role="img" aria-label="A quiet field of connected opportunity nodes scanned by a moving signal line">
+              <g class="brand-grid"><path d="M75 120h450M75 170h450M75 220h450M75 270h450M75 320h450M75 370h450M120 90v330M180 90v330M240 90v330M300 90v330M360 90v330M420 90v330M480 90v330"/></g>
+              <path d="M120 320 180 270 240 270 300 170 360 220 420 170 480 220" class="brand-path" opacity=".65"/><path d="M120 320 180 270 240 270 300 170 360 220 420 170 480 220" class="brand-stream" fill="none" stroke="#3347ff" stroke-width="1"/>
+              <path class="scanline" d="M95 270h410" stroke="#d9ff3f" stroke-width="2"/><path class="brand-grid" d="M98 270h404" stroke="#111" stroke-opacity=".5"/>
+              <g fill="#eee9df" stroke="#111" stroke-width="2"><circle cx="120" cy="320" r="8"/><circle cx="180" cy="270" r="8"/><circle cx="240" cy="270" r="8"/><circle cx="300" cy="170" r="10" fill="#d9ff3f"/><circle cx="360" cy="220" r="8"/><circle cx="420" cy="170" r="8"/><circle cx="480" cy="220" r="8"/></g>
+              <circle r="8" fill="#d9ff3f" stroke="#111" stroke-width="1.4" class="brand-signal"><animateMotion dur="6s" repeatCount="indefinite" path="M120 320 180 270 240 270 300 170 360 220 420 170 480 220"/></circle>
+              <circle cx="300" cy="170" r="31" fill="none" stroke="#3347ff" stroke-opacity=".55" class="output-pulse"/><text x="300" y="143" text-anchor="middle" fill="#555" font-family="DM Mono,monospace" font-size="8" letter-spacing="1.3">HIGH-LEVERAGE MOVE</text>
+            </svg>
+          </div>
+          <div class="copy"><span class="mono number">DIRECTION 07 / BRAND-NATIVE</span><h2>Opportunity field</h2><p>A legible map of priorities instead of abstract AI magic. A soft scan finds a high-leverage opportunity, then routes a signal through the next steps.</p><span class="motion-note mono"><i></i> SCAN + ROUTE</span></div>
+        </article>
+
+        <article class="option">
+          <div class="art">
+            <span class="label a">08 / PEOPLE × SYSTEMS<br /><strong>HUMAN LOOP / ACTIVE</strong></span><span class="label b">SHARED CONTROL<br />TWO INPUTS / ONE OUTCOME</span>
+            <svg viewBox="0 0 600 500" role="img" aria-label="Two interlocking human and machine loops form a shared blue center with moving signal markers">
+              <ellipse cx="250" cy="250" rx="150" ry="82" transform="rotate(-34 250 250)" fill="none" stroke="#111" stroke-width="2"/><ellipse cx="350" cy="250" rx="150" ry="82" transform="rotate(34 350 250)" fill="none" stroke="#3347ff" stroke-width="2"/>
+              <ellipse cx="250" cy="250" rx="150" ry="82" transform="rotate(-34 250 250)" class="brand-stream" fill="none" stroke="#111" stroke-opacity=".5" stroke-width="1"/><ellipse cx="350" cy="250" rx="150" ry="82" transform="rotate(34 350 250)" class="brand-stream" fill="none" stroke="#3347ff" stroke-opacity=".65" stroke-width="1"/>
+              <path d="M300 185v130M272 250h56" stroke="#111" stroke-opacity=".24"/><circle cx="300" cy="250" r="38" fill="#111"/><circle cx="300" cy="250" r="24" fill="#3347ff"/><circle cx="300" cy="250" r="6" fill="#d9ff3f" class="neon-pulse"/>
+              <circle r="9" fill="#d9ff3f" stroke="#111" stroke-width="1.5"><animateMotion dur="7s" repeatCount="indefinite" path="M97 250a153 86 -34 1 0 306 0a153 86 -34 1 0 -306 0"/></circle>
+              <circle r="7" fill="#3347ff" stroke="#eee9df" stroke-width="2"><animateMotion dur="7s" repeatCount="indefinite" path="M197 250a153 86 34 1 1 306 0a153 86 34 1 1 -306 0"/></circle>
+              <text x="143" y="154" fill="#555" font-family="DM Mono,monospace" font-size="8" letter-spacing="1.3">JUDGMENT</text><text x="401" y="154" fill="#3347ff" font-family="DM Mono,monospace" font-size="8" letter-spacing="1.3">CAPABILITY</text>
+            </svg>
+          </div>
+          <div class="copy"><span class="mono number">DIRECTION 08 / BRAND-NATIVE</span><h2>People × systems</h2><p>Two loops move independently but share a center. The yellow point marks human judgment; blue carries system capability. Their overlap is where useful work happens.</p><span class="motion-note mono"><i></i> INTERLOCK + ORBIT</span></div>
+        </article>
+
+        <article class="option">
+          <div class="art">
+            <span class="label a">09 / SYSTEM, ASSEMBLING<br /><strong>PROTOTYPE → PRACTICE</strong></span><span class="label b">BUILD STATUS<br />FOUNDATION / LIVE</span>
+            <svg viewBox="0 0 600 500" role="img" aria-label="A useful system assembles from modular blocks and sends a signal into motion">
+              <g class="brand-grid"><path d="M95 365h410M120 110v290M180 110v290M240 110v290M300 110v290M360 110v290M420 110v290M480 110v290"/></g>
+              <g stroke="#111" stroke-width="1.5"><rect x="180" y="295" width="70" height="70" fill="#111"><animate attributeName="y" values="322;295;295" keyTimes="0;.3;1" dur="4.5s" repeatCount="indefinite"/></rect><rect x="255" y="295" width="70" height="70" fill="#eee9df"><animate attributeName="y" values="270;295;295" keyTimes="0;.34;1" dur="4.5s" repeatCount="indefinite"/></rect><rect x="330" y="295" width="70" height="70" fill="#3347ff"><animate attributeName="y" values="317;295;295" keyTimes="0;.42;1" dur="4.5s" repeatCount="indefinite"/></rect><rect x="255" y="220" width="70" height="70" fill="#d9ff3f"><animate attributeName="y" values="185;220;220" keyTimes="0;.48;1" dur="4.5s" repeatCount="indefinite"/></rect></g>
+              <path d="M205 330h175M290 255v75" stroke="#eee9df" stroke-opacity=".65"/><path d="M365 220h75v-65h74" class="brand-path"/><path d="M365 220h75v-65h74" class="brand-stream" fill="none" stroke="#3347ff" stroke-width="1.3"/>
+              <circle r="8" fill="#d9ff3f" stroke="#111" stroke-width="1.5"><animateMotion dur="3.7s" repeatCount="indefinite" path="M365 220h75v-65h74"/></circle>
+              <text x="290" y="405" text-anchor="middle" fill="#555" font-family="DM Mono,monospace" font-size="8" letter-spacing="1.3">CUSTOM-FIT / READY TO SHIP</text>
+            </svg>
+          </div>
+          <div class="copy"><span class="mono number">DIRECTION 09 / BRAND-NATIVE</span><h2>System, assembling</h2><p>Strategy becomes something concrete. The pieces settle into a custom-fit system, the route lights up, and the work moves beyond the slide deck.</p><span class="motion-note mono"><i></i> ASSEMBLE + ACTIVATE</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="study-group" aria-labelledby="marathon-study-heading">
+      <span class="mono eyebrow">TACTICAL SCI-FI STUDIES / MARATHON-INSPIRED</span>
+      <h2 id="marathon-study-heading">Same Agentcy signal.<br />More frontier energy.</h2>
+      <p class="study-intro">A stronger game-world treatment: hard-edged mission graphics, deep graphite, ion blue, and charged yellow. These are original Agentcy concepts, not lifted game art or marks.</p>
+      <div class="options">
+        <article class="option">
+          <div class="art marathon-art">
+            <span class="label a">10 / FRONTIER SCAN<br /><strong>SECTOR 04 · ROUTE OPEN</strong></span><span class="label b">THREAT / CLEAR<br />OBJECTIVE / IN RANGE</span>
+            <svg viewBox="0 0 600 500" role="img" aria-label="A rotating tactical radar grid with an active yellow signal and waypoint markers">
+              <g class="m-radar"><circle cx="300" cy="250" r="179" fill="none" stroke="#68736d" stroke-opacity=".6"/><circle cx="300" cy="250" r="136" fill="none" stroke="#68736d" stroke-opacity=".32" stroke-dasharray="2 7"/><path d="M300 71v358M121 250h358M173 123l254 254M173 377l254-254" stroke="#d9ff3f" stroke-opacity=".28"/><path d="M300 250 300 72A178 178 0 0 1 460 170Z" fill="#d9ff3f" fill-opacity=".11"/></g>
+              <path d="M145 328 219 287l52 15 81-94 78 28" class="m-trace"/><path d="M145 328 219 287l52 15 81-94 78 28" fill="none" stroke="#a4b0a5" stroke-opacity=".5"/>
+              <g fill="#101311" stroke="#a4b0a5" stroke-width="1"><path d="m184 184 18-30 18 30-18 30z"/><path d="m397 323 18-30 18 30-18 30z"/></g><circle cx="352" cy="208" r="8" fill="#d9ff3f" class="m-blip"/><circle cx="352" cy="208" r="22" fill="none" stroke="#d9ff3f" class="output-pulse"/>
+              <circle r="7" fill="#d9ff3f"><animateMotion dur="6.5s" repeatCount="indefinite" path="M145 328 219 287l52 15 81-94 78 28"/></circle><text x="300" y="465" text-anchor="middle" fill="#8d9991" font-family="DM Mono,monospace" font-size="8" letter-spacing="1.5">FIELD INTELLIGENCE / LIVE</text>
+            </svg>
+          </div>
+          <div class="copy"><span class="mono number">DIRECTION 10 / MARATHON-INSPIRED</span><h2>Frontier scan</h2><p>Mission-control framing with a restrained radar sweep. A moving route marker gives the art a playable-world feel while keeping the information unusually clear.</p><span class="motion-note mono"><i></i> RADAR + WAYPOINT</span></div>
+        </article>
+
+        <article class="option">
+          <div class="art marathon-art">
+            <span class="label a">11 / RELIC INTERFACE<br /><strong>UNKNOWN OBJECT · 001</strong></span><span class="label b">CONTAINMENT<br />STABLE / OBSERVE</span>
+            <svg viewBox="0 0 600 500" role="img" aria-label="A floating alien artifact framed by scanning brackets and animated data traces">
+              <defs><linearGradient id="relic" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#dfe7d9"/><stop offset=".34" stop-color="#68736d"/><stop offset=".7" stop-color="#202522"/><stop offset="1" stop-color="#090c0d"/></linearGradient></defs>
+              <path d="M141 115h54M141 115v54M459 115h-54M459 115v54M141 385h54M141 385v-54M459 385h-54M459 385v-54" fill="none" stroke="#d9ff3f" stroke-width="2"/>
+              <ellipse cx="300" cy="255" rx="138" ry="169" fill="none" stroke="#69736b" stroke-dasharray="2 9"/><ellipse cx="300" cy="255" rx="103" ry="145" fill="none" stroke="#62d8eb" stroke-opacity=".56" transform="rotate(45 300 255)"/>
+              <g class="constellation-core"><path d="m300 131 57 41 25 86-47 104-70-20-47-84 17-84z" fill="url(#relic)" stroke="#aeb8ac"/><path d="m300 131 57 41-45 74-94-6 17-84z" fill="#e8ede4" fill-opacity=".18"/><path d="m312 246 70 12-47 104-70-20z" fill="#090c0d"/><path d="M217 240h177M300 135v227" stroke="#d9ff3f" stroke-opacity=".42"/></g>
+              <path d="M117 257h106M377 257h106" stroke="#62d8eb" stroke-opacity=".68" class="m-trace"/><circle r="6" fill="#d9ff3f"><animateMotion dur="4s" repeatCount="indefinite" path="M117 257h106M377 257h106"/></circle>
+              <circle cx="300" cy="257" r="13" fill="#d9ff3f" opacity=".15"/><circle cx="300" cy="257" r="4" fill="#d9ff3f" class="neon-pulse"/>
+              <text x="300" y="431" text-anchor="middle" fill="#9da89f" font-family="DM Mono,monospace" font-size="8" letter-spacing="1.5">ANALYSIS BEFORE EXTRACTION</text>
+            </svg>
+          </div>
+          <div class="copy"><span class="mono number">DIRECTION 11 / MARATHON-INSPIRED</span><h2>Relic interface</h2><p>A strange object treated like a high-value system under study. Bracket geometry, scan lines, and slow rotation make it feel discovered, not decorative.</p><span class="motion-note mono"><i></i> SCAN + ROTATE</span></div>
+        </article>
+
+        <article class="option">
+          <div class="art marathon-art">
+            <span class="label a">12 / EXTRACTION VECTOR<br /><strong>WINDOW / 00:48</strong></span><span class="label b">EXIT CONFIRMED<br />CARRY SIGNAL HOME</span>
+            <svg viewBox="0 0 600 500" role="img" aria-label="A topographic extraction map with a pulsing objective zone and a moving route to an exit point">
+              <g fill="none" stroke="#68736d" stroke-opacity=".45"><path d="M68 146c80-77 132 24 212-8s147-71 250 4M72 166c76-63 135 24 209-4s150-62 244 5M79 187c70-49 137 22 202-2s150-49 235 7M88 209c64-34 138 18 192 0s151-36 220 8M96 232c59-19 137 15 183 0s147-21 210 8M90 338c65 45 133-23 204 2s151 71 236-2M82 360c71 55 135-23 211 4s146 59 230-7M75 382c78 64 135-23 216 5s142 49 237-9"/></g>
+              <path d="M124 338 205 294l65 19 68-88 79 41 83-105" class="m-trace"/><path d="M124 338 205 294l65 19 68-88 79 41 83-105" fill="none" stroke="#d9ff3f" stroke-opacity=".7" stroke-width="1"/>
+              <g fill="#101311" stroke="#aeb8ac"><path d="m113 327 11-19 11 19-11 19z"/><path d="m488 149 12-20 12 20-12 20z"/><rect x="326" y="212" width="24" height="24" transform="rotate(45 338 224)"/></g>
+              <circle cx="500" cy="149" r="31" fill="none" stroke="#d9ff3f" class="output-pulse"/><circle cx="500" cy="149" r="7" fill="#d9ff3f" class="m-blip"/><circle r="7" fill="#d9ff3f" stroke="#101311" stroke-width="1.5"><animateMotion dur="5s" repeatCount="indefinite" path="M124 338 205 294l65 19 68-88 79 41 83-105"/></circle>
+              <path d="M110 116h50M110 116v50M490 383h-50M490 383v-50" fill="none" stroke="#62d8eb" stroke-width="1.5"/>
+              <text x="124" y="370" fill="#a7b1aa" font-family="DM Mono,monospace" font-size="8" letter-spacing="1.3">INSERTION</text><text x="461" y="110" fill="#d9ff3f" font-family="DM Mono,monospace" font-size="8" letter-spacing="1.3">EXTRACTION</text>
+            </svg>
+          </div>
+          <div class="copy"><span class="mono number">DIRECTION 12 / MARATHON-INSPIRED</span><h2>Extraction vector</h2><p>Topographic terrain, a timed route, and one precise exit marker. The signal travels from insertion to extraction, turning the hero into an active mission map.</p><span class="motion-note mono"><i></i> ROUTE + EXTRACTION</span></div>
         </article>
       </div>
     </section>

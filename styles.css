@@ -84,6 +84,10 @@
 .matrix-wordmark .matrix-char.is-decoding .matrix-final{opacity:0}
 .matrix-wordmark .matrix-char.is-decoded .matrix-final{opacity:1;animation:matrix-letter-resolve .2s cubic-bezier(.2,.75,.25,1) both}
 .matrix-wordmark .matrix-char.brand-cy{color:var(--blue)}
+.matrix-wordmark .mark-dot{display:inline-block}
+.matrix-wordmark:not(.is-resolved) .mark-dot{opacity:0}
+.matrix-wordmark.is-resolved .mark-dot{animation:wordmark-dot-drop .42s cubic-bezier(.2,.75,.25,1) .16s both}
+@keyframes wordmark-dot-drop{from{opacity:0;transform:translateY(-.55em)}to{opacity:1;transform:translateY(0)}}
 .logo-cy{color:var(--blue)}
 .footer-logo .logo-cy{font-size:inherit;vertical-align:baseline}
 .footer-logo .mark-dot{font-size:.65em;vertical-align:top;color:var(--lime)}
@@ -105,3 +109,29 @@
 @media(max-width:640px){.hero-morph{max-width:255px;min-height:82px;--logo-offset:-7px}.hero-morph-source{font-size:13px;max-width:255px}.hero-morph-logo{font-size:30px}}
 @media(max-width:640px){.hero-morph-glitch{font-size:13px;max-width:255px}}
 @media(prefers-reduced-motion:reduce){.matrix-wordmark .matrix-char .matrix-final{opacity:1!important}.matrix-wordmark .matrix-char .matrix-code{display:none!important}.hero-morph-source{opacity:1!important;transform:none!important}.hero-morph-logo,.hero-morph-glitch{display:none!important}}
+
+/* Keep the revised hero headline broad without letting it dominate the page. */
+.hero h1{font-size:clamp(86px,13.4vw,195px);letter-spacing:-.075em}
+.hero-headline-nowrap{display:inline-block;position:relative;white-space:nowrap}
+.underlined-word:after{content:none}
+.underline-arrow{position:absolute;left:5px;bottom:-.18em;width:calc(100% + .55em - 5px);height:.82em;overflow:visible;pointer-events:none;z-index:-1}
+.underline-arrow path{fill:none;stroke:var(--lime);stroke-width:6;stroke-linecap:round;stroke-linejoin:round}
+.underline-arrow-path{stroke-dasharray:100;stroke-dashoffset:100;transition:stroke-dashoffset .42s cubic-bezier(.2,.75,.25,1)}
+.underline-arrow-head{stroke-dasharray:40;stroke-dashoffset:40;transition:stroke-dashoffset .18s ease .48s}
+.underlined-word:hover .underline-arrow-path,.underlined-word:hover .underline-arrow-head{stroke-dashoffset:0}
+@media(max-width:640px){.hero h1{font-size:clamp(70px,21.5vw,138px);letter-spacing:-.075em}}
+
+/* Scroll-triggered Matrix reveal for the two manifesto keywords. */
+.matrix-scroll-word{white-space:nowrap}
+.scroll-matrix-ready .matrix-scroll-word{opacity:0;transition:opacity .1s linear}
+.scroll-matrix-ready .matrix-scroll-word.is-started{opacity:1}
+.matrix-scroll-char{display:inline-block;position:relative}
+.matrix-scroll-code,.matrix-scroll-final{display:inline-block;transition:opacity .18s linear}
+.matrix-scroll-char .matrix-scroll-final{opacity:0}
+.matrix-scroll-code{position:absolute;inset:0;display:grid;place-items:center;opacity:0;color:#8ead16;font:500 .53em/1 var(--mono);font-variant-ligatures:none;text-shadow:0 0 8px #d9ff3f9c;white-space:nowrap}
+.matrix-scroll-char.is-active .matrix-scroll-code{opacity:1}
+.matrix-scroll-char.is-active .matrix-scroll-final{opacity:0}
+.matrix-scroll-char.is-resolved .matrix-scroll-code{opacity:0}
+.matrix-scroll-char.is-resolved .matrix-scroll-final{opacity:1;animation:matrix-scroll-resolve .22s cubic-bezier(.2,.75,.25,1) both}
+@keyframes matrix-scroll-resolve{from{transform:perspective(110px) rotateX(-62deg) translateY(-.1em);filter:brightness(2)}to{transform:perspective(110px) rotateX(0) translateY(0);filter:brightness(1)}}
+@media(prefers-reduced-motion:reduce){.matrix-scroll-code{display:none!important}.matrix-scroll-final{opacity:1!important;animation:none!important}}

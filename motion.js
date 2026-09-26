@@ -43,10 +43,13 @@
       }
     });
     if (p < 1) requestAnimationFrame(next => animateWordmark(next, start));
-    else chars.forEach(char => {
-      char.classList.remove('is-decoding', 'is-pending');
-      char.classList.add('is-decoded');
-    });
+    else {
+      chars.forEach(char => {
+        char.classList.remove('is-decoding', 'is-pending');
+        char.classList.add('is-decoded');
+      });
+      wordmark.classList.add('is-resolved');
+    }
   }
 
   function setSticky(on) {
@@ -134,6 +137,41 @@
     revealObserver.observe(el);
   });
 
+  const scrollMatrixWords = [...document.querySelectorAll('[data-matrix-word]')];
+  if (!reduceMotion && scrollMatrixWords.length) {
+    document.documentElement.classList.add('scroll-matrix-ready');
+    const decodeMatrixWord = word => {
+      if (word.dataset.matrixStarted) return;
+      word.dataset.matrixStarted = 'true';
+      word.classList.add('is-started');
+      const finalWord = word.getAttribute('aria-label') || word.textContent.trim();
+      word.innerHTML = [...finalWord].map(letter => `<span class="matrix-scroll-char" aria-hidden="true"><span class="matrix-scroll-code"></span><span class="matrix-scroll-final">${letter}</span></span>`).join('');
+      const characters = [...word.querySelectorAll('.matrix-scroll-char')];
+      characters.forEach((character, index) => {
+        const code = character.querySelector('.matrix-scroll-code');
+        const resolveDelay = Number(word.dataset.matrixDelay || 0) + index * 48;
+        window.setTimeout(() => {
+          code.textContent = glyphs[Math.floor(Math.random() * glyphs.length)];
+          character.classList.add('is-active');
+          const cycle = window.setInterval(() => {
+            code.textContent = glyphs[Math.floor(Math.random() * glyphs.length)];
+          }, 52);
+          window.setTimeout(() => {
+            window.clearInterval(cycle);
+            character.classList.remove('is-active');
+            character.classList.add('is-resolved');
+          }, 187 + (index % 3) * 24);
+        }, resolveDelay);
+      });
+    };
+    const scrollMatrixObserver = new IntersectionObserver(entries => entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      decodeMatrixWord(entry.target);
+      scrollMatrixObserver.unobserve(entry.target);
+    }), { threshold: 0.15, rootMargin: '0px 0px -4% 0px' });
+    scrollMatrixWords.forEach(word => scrollMatrixObserver.observe(word));
+  }
+
   document.querySelectorAll('.motion-card').forEach(card => {
     card.addEventListener('pointermove', event => {
       if (reduceMotion) return;
@@ -149,6 +187,7 @@
     requestAnimationFrame(start => animateWordmark(start, start));
   } else {
     chars.forEach(char => char.classList.add('is-decoded'));
+    wordmark?.classList.add('is-resolved');
   }
   window.addEventListener('scroll', updateScroll, { passive: true });
   window.addEventListener('resize', updateScroll);

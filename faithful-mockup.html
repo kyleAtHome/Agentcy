@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f2f0e8" />
+  <title>Agentcy — Brand Study 01</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root{--bone:#f2f0e8;--ink:#111111;--lime:#d9ff3f;--blue:#3347ff;--concrete:#b9b8b1;--mono:'DM Mono',monospace;--sans:'Manrope',Arial,sans-serif}
+    *{box-sizing:border-box}html{background:var(--bone);scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:var(--sans);background:var(--bone)}
+    .page{max-width:1700px;margin:auto;padding:24px 14px 14px;position:relative;isolation:isolate}.page:before{content:"";position:absolute;inset:0;z-index:-1;opacity:.105;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.87' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");mix-blend-mode:multiply}
+    .hero{min-height:min(56vw,860px);display:grid;grid-template-columns:41% 59%;border-bottom:1px solid #1116;position:relative}.left{padding:0 30px 24px 3%;display:flex;flex-direction:column;min-width:0}.brand{font-size:clamp(68px,8.9vw,144px);line-height:.83;letter-spacing:-.105em;font-weight:800;white-space:nowrap;margin:0 0 30px}.brand sup{font:500 10px var(--mono);letter-spacing:0;vertical-align:top;margin-left:8px}.study{font:500 12px/1.4 var(--mono);letter-spacing:.19em;margin:0 0 28px}.headline{font-size:clamp(76px,12.7vw,202px);line-height:.79;letter-spacing:-.105em;font-weight:800;margin:0 0 auto;max-width:620px}.headline .comma{letter-spacing:-.14em}.headline .last{white-space:nowrap}.action-row{display:flex;align-items:center;gap:40px;margin-top:30px}.button{font:500 15px var(--mono);letter-spacing:.19em;text-decoration:none;color:var(--ink);border:1px solid var(--ink);padding:17px 27px;display:inline-flex;align-items:center;justify-content:center;min-width:235px;transition:background .2s,color .2s}.button:hover{background:var(--ink);color:var(--bone)}.action-note,.footer-note{font:9px/1.65 var(--mono);letter-spacing:.1em}.action-note{margin:0}.index{font:9px var(--mono);letter-spacing:.1em;margin:auto 0 0}.left-foot{display:flex;justify-content:space-between;align-items:end;margin-top:42px;gap:18px}.footer-note{max-width:290px;margin:0}
+    .right{position:relative;min-width:0;overflow:hidden}.art-stage{position:absolute;inset:0;display:grid;place-items:center}.ribbon{position:absolute;width:min(82%,720px);height:auto;max-height:91%;object-fit:contain;filter:contrast(1.04);animation:float 9s ease-in-out infinite;z-index:1}.orbits{position:absolute;width:100%;height:100%;inset:0;overflow:visible}.orbit-solid{fill:none;stroke:var(--blue);stroke-width:1.65}.orbit-dashed{fill:none;stroke:var(--blue);stroke-width:2.3;stroke-dasharray:1 9;stroke-linecap:round}.cross{stroke:var(--blue);stroke-width:1.5}.satellite-path{transform-origin:60% 49%;animation:orbit 17s linear infinite}.satellite{filter:drop-shadow(0 2px 6px #899c1570)}.satellite-core{fill:url(#limeOrb);stroke:#accd28;stroke-width:.65}.sat-grain{fill:url(#orbNoise);opacity:.24;mix-blend-mode:multiply}.sat-highlight{fill:#fff9;filter:blur(5px)}.blue-dot{fill:var(--blue)}.ring-target{fill:none;stroke:var(--blue);stroke-width:1.5}.margin-note{position:absolute;z-index:2;font:9px/1.55 var(--mono);letter-spacing:.12em}.margin-note b{display:block;font-weight:400;margin-top:10px}.n-top{right:2%;top:2%}.n-mid{left:5%;top:42%}.n-right{right:0;top:57%}.n-bottom{left:3%;bottom:2%}.n-coord{right:1%;bottom:2%}.n-caption{left:48%;bottom:1.7%;text-align:center;transform:translateX(-50%)}.n-caption:after,.margin-note:not(.n-top):not(.n-right):not(.n-coord):not(.n-caption):after{content:"";display:block;width:10px;border-top:1px solid currentColor;margin:8px auto 0}.n-mid:after,.n-bottom:after{margin-left:0!important}.scale-mark{position:absolute;left:50%;top:50%;width:78px;height:78px;transform:translate(-50%,-50%);opacity:.75}.scale-mark:before,.scale-mark:after{content:"";position:absolute;background:var(--blue)}.scale-mark:before{height:1px;width:100%;top:50%}.scale-mark:after{width:1px;height:100%;left:50%}
+    .palette{height:128px;display:grid;grid-template-columns:repeat(5,1fr);border:1px solid #1113;border-top:0}.swatch{padding:0 14%;display:flex;flex-direction:column;justify-content:center;gap:7px;font:500 12px/1.3 var(--mono);letter-spacing:.14em}.swatch span{font-size:11px;letter-spacing:.05em}.swatch.bone{background:var(--bone)}.swatch.ink{background:var(--ink);color:var(--bone)}.swatch.lime{background:var(--lime)}.swatch.blue{background:var(--blue);color:white}.swatch.concrete{background:var(--concrete)}
+    @keyframes orbit{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}@keyframes float{0%,100%{transform:translateY(0) rotate(-.3deg)}50%{transform:translateY(-8px) rotate(.3deg)}}
+    @media(min-width:1500px){.headline{font-size:202px}.brand{font-size:144px}}
+    @media(max-width:900px){.page{padding:17px 12px 12px}.hero{min-height:auto;grid-template-columns:1fr}.left{padding:0 5% 25px;min-height:660px}.brand{font-size:clamp(72px,15vw,130px);margin-bottom:20px}.study{margin-bottom:24px}.headline{font-size:clamp(88px,19vw,170px);margin:0;max-width:none}.action-row{margin-top:auto}.left-foot{margin-top:35px}.index{position:absolute;bottom:22px;left:5%}.right{height:clamp(460px,95vw,760px);border-top:1px solid #1113}.ribbon{width:min(88%,650px)}.margin-note{font-size:8px}.n-top{right:2%;top:3%}.n-right{right:2%}.n-mid{left:2%}.palette{height:100px}.swatch{padding:0 9%;font-size:10px}.swatch span{font-size:9px}}
+    @media(max-width:560px){.left{min-height:570px;padding-left:4%;padding-right:4%}.brand{font-size:17vw}.study{font-size:9px;letter-spacing:.14em}.headline{font-size:clamp(74px,20vw,115px)}.action-row{gap:15px}.button{min-width:0;padding:15px 17px;font-size:12px}.action-note{font-size:8px}.right{height:112vw;min-height:420px;max-height:560px}.ribbon{width:104%;max-width:none}.margin-note{font-size:7px}.n-top{top:2%;right:2%}.n-mid{left:2%;top:43%}.n-right{right:1%;top:61%}.n-caption{bottom:2%}.n-coord{bottom:2%;right:1%}.palette{grid-template-columns:repeat(5,1fr);height:78px}.swatch{padding:0 4%;gap:4px;font-size:7px;letter-spacing:.04em}.swatch span{font-size:7px}.left-foot{margin-top:28px}.footer-note{font-size:7px}.index{font-size:8px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero" aria-label="Agentcy brand study">
+      <div class="left">
+        <h1 class="brand">agentcy<sup>™</sup></h1>
+        <p class="study">AI CONSULTANCY / BRAND STUDY 01</p>
+        <p class="headline">AI<span class="comma">,</span><br />put to<br /><span class="last">work.</span></p>
+        <div class="action-row"><a class="button" href="mailto:hello@agentcy.com">LET’S BUILD</a><p class="action-note">PEOPLE<br />IDEAS<br />SYSTEMS<br />REAL OUTCOMES</p></div>
+        <div class="left-foot"><span class="index">01</span><p class="footer-note">APPLIED INTELLIGENCE<br />FOR A BRIGHTER WORKING WORLD</p></div>
+      </div>
+      <div class="right">
+        <span class="margin-note n-top">HUMAN<br />JUDGMENT<br /><b>×</b>MACHINE<br />LEVERAGE<br />=<br />REAL PROGRESS</span>
+        <span class="margin-note n-mid">ANALYZE<br />ALIGN<br />BUILD<br />DEPLOY<br />ITERATE</span>
+        <span class="margin-note n-right">SYSTEMS<br />THAT<br />MOVE<br />PEOPLE<br />FORWARD</span>
+        <span class="margin-note n-bottom">IDEAS<br />INTO<br />IMPACT</span>
+        <span class="margin-note n-caption">INTELLIGENCE<br />IN MOTION</span>
+        <span class="margin-note n-coord">40.7128° N<br />74.0060° W<br /><b>A BRIGHTER<br />WORK AWAITS</b></span>
+        <div class="art-stage">
+          <img class="ribbon" src="assets/agentcy-ribbon-art.png" alt="Interwoven textured black ribbon sculpture" />
+          <svg class="orbits" viewBox="0 0 900 780" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+            <defs>
+              <radialGradient id="limeOrb" cx="35%" cy="28%"><stop offset="0" stop-color="#f3ff9e"/><stop offset=".32" stop-color="#dfff4b"/><stop offset="1" stop-color="#b7d81d"/></radialGradient>
+              <filter id="orbNoise"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="2"/><feColorMatrix values=".3 0 0 0 0 .3 0 0 0 0 .1 0 0 0 0 0 0 0 .25 0"/></filter>
+            </defs>
+            <ellipse class="orbit-solid" cx="460" cy="390" rx="365" ry="126" transform="rotate(-17 460 390)"/>
+            <ellipse class="orbit-dashed" cx="460" cy="390" rx="174" ry="312" transform="rotate(29 460 390)"/>
+            <path class="cross" d="M550 20v303M550 427v333M516 390h68M535 77h30M550 62v30M831 574h34M848 557v34"/>
+            <g class="satellite-path"><g class="satellite" transform="translate(730 291)"><circle class="satellite-core" r="39"/><circle class="sat-grain" r="37"/><ellipse class="sat-highlight" cx="-9" cy="-15" rx="10" ry="6"/><circle cx="-21" cy="9" r="1.6" fill="#8ea522" opacity=".55"/><circle cx="16" cy="-3" r="1.2" fill="#8ea522" opacity=".55"/></g></g>
+            <circle class="blue-dot" cx="95" cy="512" r="10"/>
+            <g transform="translate(847 300)"><circle class="ring-target" r="17"/><circle class="ring-target" r="10"/><path class="cross" d="M-14 0h28M0-14v28"/></g>
+            <g class="scale-mark" transform="translate(0 0)"></g>
+          </svg>
+        </div>
+      </div>
+    </section>
+    <section class="palette" aria-label="Brand color palette">
+      <div class="swatch bone">BONE<span>#F2F0E8</span></div><div class="swatch ink">INK<span>#111111</span></div><div class="swatch lime">SIGNAL LIME<span>#D9FF3F</span></div><div class="swatch blue">COBALT<span>#3347FF</span></div><div class="swatch concrete">CONCRETE<span>#B9B8B1</span></div>
+    </section>
+  </main>
+</body>
+</html>
