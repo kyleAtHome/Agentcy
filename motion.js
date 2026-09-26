@@ -19,6 +19,33 @@
   let morphFrame = 0;
   let lastScrollY = window.scrollY;
 
+  const ticker = document.querySelector('.ticker');
+  const tickerTrack = ticker?.querySelector('.ticker-track');
+  const tickerGroup = tickerTrack?.querySelector('.ticker-group');
+  if (ticker && tickerTrack && tickerGroup) {
+    const fillTicker = () => {
+      const groupWidth = tickerGroup.offsetWidth;
+      if (!groupWidth) return;
+      const copiesNeeded = Math.max(2, Math.ceil((ticker.clientWidth + groupWidth) / groupWidth));
+      while (tickerTrack.children.length < copiesNeeded) {
+        tickerTrack.append(tickerGroup.cloneNode(true));
+      }
+      while (tickerTrack.children.length > copiesNeeded) {
+        tickerTrack.lastElementChild.remove();
+      }
+      tickerTrack.style.setProperty('--ticker-shift', `${-groupWidth}px`);
+    };
+    if ('ResizeObserver' in window) {
+      const tickerObserver = new ResizeObserver(fillTicker);
+      tickerObserver.observe(ticker);
+      tickerObserver.observe(tickerGroup);
+    } else {
+      window.addEventListener('resize', fillTicker);
+      window.addEventListener('load', fillTicker, { once: true });
+    }
+    fillTicker();
+  }
+
   function animateWordmark(now, start) {
     const p = Math.min(1, (now - start) / duration);
     chars.forEach((char, i) => {

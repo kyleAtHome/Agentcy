@@ -114,12 +114,22 @@
 .hero h1{font-size:clamp(86px,13.4vw,195px);letter-spacing:-.075em}
 .hero-headline-nowrap{display:inline-block;position:relative;white-space:nowrap}
 .underlined-word:after{content:none}
-.underline-arrow{position:absolute;left:5px;bottom:-.18em;width:calc(100% + .55em - 5px);height:.82em;overflow:visible;pointer-events:none;z-index:-1}
+.underline-arrow{position:absolute;left:5px;bottom:-.18em;width:calc(100% + .85em - 5px);height:.82em;overflow:visible;pointer-events:none;z-index:-1}
 .underline-arrow path{fill:none;stroke:var(--lime);stroke-width:6;stroke-linecap:round;stroke-linejoin:round}
 .underline-arrow-path{stroke-dasharray:100;stroke-dashoffset:100;transition:stroke-dashoffset .42s cubic-bezier(.2,.75,.25,1)}
 .underline-arrow-head{stroke-dasharray:40;stroke-dashoffset:40;transition:stroke-dashoffset .18s ease .48s}
 .underlined-word:hover .underline-arrow-path,.underlined-word:hover .underline-arrow-head{stroke-dashoffset:0}
 @media(max-width:640px){.hero h1{font-size:clamp(70px,21.5vw,138px);letter-spacing:-.075em}}
+
+/* The ribbon loops by one identical segment, with enough copies for any viewport. */
+.ticker-track{width:max-content;min-width:100%;justify-content:flex-start;gap:0;padding-left:0;will-change:transform}
+.ticker-group{display:flex;flex:0 0 auto;align-items:center;gap:clamp(24px,4vw,64px);padding-right:clamp(24px,4vw,64px);white-space:nowrap}
+@keyframes marquee{to{transform:translateX(var(--ticker-shift,-50%))}}
+@media(max-width:640px){.ticker-group{gap:24px;padding-right:24px}}
+@media(prefers-reduced-motion:reduce){.ticker-track{animation:none!important;transform:none!important}}
+
+/* Keep the composition centered and proportionate on ultra-wide desktops. */
+@media(min-width:1921px){.site-shell{max-width:1920px}.topbar.is-sticky{width:min(100vw,1920px)}}
 
 /* Scroll-triggered Matrix reveal for the two manifesto keywords. */
 .matrix-scroll-word{white-space:nowrap}
