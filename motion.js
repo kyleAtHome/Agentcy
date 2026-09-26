@@ -1,89 +1,156 @@
 (() => {
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const menuButton = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('.topnav');
-  const meter = document.querySelector('.scroll-meter');
-  const heroArt = document.querySelector('.hero-art');
-  const orbitalGraphic = heroArt?.querySelector('.orbital-art');
-  const orbitRings = heroArt?.querySelector('.orbit-rings');
-  const waypointGroup = heroArt?.querySelector('.waypoints');
-  const limeWaypoint = heroArt?.querySelector('.waypoint-lime');
-  const targetMark = heroArt?.querySelector('.target-mark');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const topbar = document.querySelector('.topbar');
+  const wordmark = document.querySelector('.matrix-wordmark');
+  const chars = [...document.querySelectorAll('.matrix-wordmark .matrix-char')];
+  const codes = chars.map(el => el.querySelector('.matrix-code'));
+  const morph = document.querySelector('.hero-morph');
+  const morphSource = document.querySelector('.hero-morph-source');
+  const morphLogo = document.querySelector('.hero-morph-logo');
+  const morphGlitch = [...document.querySelectorAll('.hero-morph-glitch')];
+  const navLinks = document.querySelector('.topnav');
+  const menu = document.querySelector('.menu-toggle');
+  const duration = 1200;
+  const glyphs = Array.from('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!?:;+-=*/_[]{}()<>|#$%&@^~アイウエオカキクケコサシスセソタチツテトナニヌネノあいうえおかきくけこさしすせそたちつてとなにぬねの漢字人工知能未来世界情報機械学習中文系统网络连接数据中国龙门天地風水火山川海空星光雨雪电脑科技智能變數學習韓國한글αβγδεζηθλμξπρσφχψωΔΘΛΞΠΣΦΨΩ∞≠≤≥±×÷√∫∑∆');
+  let sticky = false;
+  let morphCompleted = false;
+  let morphStartedAt = 0;
+  let morphStartProgress = 0;
+  let morphFrame = 0;
+  let lastScrollY = window.scrollY;
 
-  menuButton?.addEventListener('click', () => {
-    const open = menuButton.getAttribute('aria-expanded') !== 'true';
-    menuButton.setAttribute('aria-expanded', String(open));
-    menuButton.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
-    nav?.classList.toggle('is-open', open);
-  });
-
-  nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
-    nav.classList.remove('is-open');
-    menuButton?.setAttribute('aria-expanded', 'false');
-    menuButton?.setAttribute('aria-label', 'Open navigation');
-  }));
-
-  const revealTargets = document.querySelectorAll('.section-kicker, .manifesto-content, .services-heading, .service-card, .quote-grid, .contact-content');
-  revealTargets.forEach((element, index) => {
-    element.classList.add('reveal');
-    element.style.transitionDelay = `${Math.min(index % 3, 2) * 75}ms`;
-  });
-
-  if ('IntersectionObserver' in window) {
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -35px 0px' });
-    revealTargets.forEach((element) => revealObserver.observe(element));
-  } else {
-    revealTargets.forEach((element) => element.classList.add('is-visible'));
+  function animateWordmark(now, start) {
+    const p = Math.min(1, (now - start) / duration);
+    chars.forEach((char, i) => {
+      const local = Math.max(0, Math.min(1, (p - i * .095) / .31));
+      const code = codes[i];
+      if (code && now >= Number(char.dataset.nextGlyphAt || 0)) {
+        const pick = glyphs[Math.floor(Math.random() * glyphs.length)];
+        code.textContent = pick === code.textContent && glyphs.length > 1
+          ? glyphs[(glyphs.indexOf(pick) + 1 + Math.floor(Math.random() * (glyphs.length - 1))) % glyphs.length]
+          : pick;
+        char.dataset.nextGlyphAt = String(now + 190);
+      }
+      if (local >= 1) {
+        char.classList.remove('is-decoding', 'is-pending');
+        char.classList.add('is-decoded');
+      } else if (local <= 0) {
+        char.classList.remove('is-decoding', 'is-decoded');
+        char.classList.add('is-pending');
+      } else {
+        char.classList.remove('is-pending', 'is-decoded');
+        char.classList.add('is-decoding');
+      }
+    });
+    if (p < 1) requestAnimationFrame(next => animateWordmark(next, start));
+    else chars.forEach(char => {
+      char.classList.remove('is-decoding', 'is-pending');
+      char.classList.add('is-decoded');
+    });
   }
 
-  if (reducedMotion) return;
+  function setSticky(on) {
+    if (sticky === on || !topbar) return;
+    sticky = on;
+    topbar.classList.toggle('is-sticky', on);
+    topbar.classList.toggle('nav-links-ready', on);
+  }
 
-  let frame = 0;
-  let smoothedProgress = 0;
-  let targetProgress = 0;
-  const updateScrollMotion = () => {
-    frame = 0;
-    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-    const progress = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
-    meter?.style.setProperty('--scroll', `${progress}%`);
-
-    if (heroArt) {
-      const rect = heroArt.getBoundingClientRect();
-      const documentTop = rect.top + window.scrollY;
-      const travelDistance = Math.max(1, documentTop + rect.height - window.innerHeight * 0.12);
-      targetProgress = Math.max(0, Math.min(1, window.scrollY / travelDistance));
-      smoothedProgress += (targetProgress - smoothedProgress) * 0.12;
-      if (Math.abs(targetProgress - smoothedProgress) < 0.001) smoothedProgress = targetProgress;
-      const scrollProgress = smoothedProgress;
-      heroArt.style.setProperty('--scroll-progress', scrollProgress.toFixed(3));
-      orbitalGraphic.style.transform = `translate3d(0, ${scrollProgress * 24}px, 0) rotate(${-scrollProgress * 4}deg)`;
-      orbitRings.style.transform = `rotate(${scrollProgress * 78}deg)`;
-      waypointGroup.style.transform = `translate(${scrollProgress * 16}px, ${-scrollProgress * 13}px)`;
-      limeWaypoint.style.transform = `translate(${-scrollProgress * 35}px, ${scrollProgress * 25}px) scale(${1 - scrollProgress * 0.12})`;
-      targetMark.style.transform = `translate(${-scrollProgress * 13}px, ${scrollProgress * 18}px)`;
-      if (Math.abs(targetProgress - smoothedProgress) >= 0.001 && !frame) {
-        frame = window.requestAnimationFrame(updateScrollMotion);
-      }
+  function advanceMorphToCompletion() {
+    morphFrame = 0;
+    if (!morphCompleted) return;
+    updateScroll();
+    if (morphCompleted && performance.now() - morphStartedAt < 440) {
+      morphFrame = requestAnimationFrame(advanceMorphToCompletion);
     }
+  }
 
-    document.querySelectorAll('.service-card').forEach((card) => {
+  function updateScroll() {
+    const y = window.scrollY;
+    const morphRect = morph ? morph.getBoundingClientRect() : null;
+    const activationLine = innerHeight * .28;
+    const rawProgress = reduceMotion || !morphRect ? 0 : Math.max(0, Math.min(1, (activationLine - morphRect.top) / activationLine));
+    const scrollingDown = y > lastScrollY;
+    if (scrollingDown && rawProgress > .025 && !morphCompleted) {
+      morphCompleted = true;
+      morphStartProgress = rawProgress;
+      morphStartedAt = performance.now();
+      if (!morphFrame) morphFrame = requestAnimationFrame(advanceMorphToCompletion);
+    }
+    if (!scrollingDown && morphRect && morphRect.top > activationLine) {
+      morphCompleted = false;
+      morphStartProgress = 0;
+      if (morphFrame) cancelAnimationFrame(morphFrame);
+      morphFrame = 0;
+    }
+    const autoT = morphCompleted ? Math.min(1, (performance.now() - morphStartedAt) / 440) : 0;
+    const autoEase = autoT * autoT * (3 - 2 * autoT);
+    const progress = morphCompleted ? morphStartProgress + (1 - morphStartProgress) * autoEase : rawProgress;
+    if (morph) {
+      morph.style.setProperty('--morph-progress', progress.toFixed(4));
+      if (morphSource) {
+        morphSource.style.opacity = String(1 - progress);
+        morphSource.style.transform = `scale(${1 - progress * .28}, ${1 - progress * .08})`;
+      }
+      if (morphLogo) {
+        const eased = progress * progress * (3 - 2 * progress);
+        morphLogo.style.opacity = String(eased);
+        morphLogo.style.transform = `translateY(var(--logo-offset, 0px)) scale(${.94 + eased * .06}, ${.94 + eased * .06})`;
+      }
+      morph.classList.toggle('is-glitching', progress > .025 && progress < .99);
+      morphGlitch.forEach(layer => { layer.style.opacity = String(Math.min(1, progress * (1 - progress) * 4)); });
+    }
+    setSticky(Boolean(morphRect && morphRect.top <= 0));
+    document.documentElement.style.setProperty('--scroll', `${(y / Math.max(1, document.documentElement.scrollHeight - innerHeight)) * 100}%`);
+    const art = document.querySelector('.hero-art');
+    if (art && !reduceMotion) {
+      const rect = art.getBoundingClientRect();
+      const progress = Math.max(-1, Math.min(1, (innerHeight * .55 - rect.top) / (innerHeight + rect.height)));
+      art.style.setProperty('--p', progress.toFixed(3));
+    }
+    lastScrollY = y;
+  }
+
+  if (menu) menu.addEventListener('click', () => {
+    const open = menu.getAttribute('aria-expanded') !== 'true';
+    menu.setAttribute('aria-expanded', String(open));
+    menu.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+    navLinks?.classList.toggle('is-open', open);
+  });
+  navLinks?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+    navLinks.classList.remove('is-open');
+    menu?.setAttribute('aria-expanded', 'false');
+    menu?.setAttribute('aria-label', 'Open navigation');
+  }));
+
+  const revealObserver = new IntersectionObserver(entries => entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
+    }
+  }), { threshold: .12 });
+  document.querySelectorAll('.manifesto-content, .services-heading, .service-card, .quote-grid, .contact-content').forEach(el => {
+    el.classList.add('reveal');
+    revealObserver.observe(el);
+  });
+
+  document.querySelectorAll('.motion-card').forEach(card => {
+    card.addEventListener('pointermove', event => {
+      if (reduceMotion) return;
       const rect = card.getBoundingClientRect();
-      const normalized = Math.max(-1, Math.min(1, (window.innerHeight * 0.6 - rect.top) / (window.innerHeight * 1.7)));
-      card.style.setProperty('--tilt', `${(normalized * 7).toFixed(2)}deg`);
+      const x = (event.clientX - rect.left) / rect.width - .5;
+      card.style.setProperty('--tilt', `${x * 5}deg`);
     });
-  };
+    card.addEventListener('pointerleave', () => card.style.setProperty('--tilt', '0deg'));
+  });
 
-  const requestScrollUpdate = () => {
-    if (!frame) frame = window.requestAnimationFrame(updateScrollMotion);
-  };
-  window.addEventListener('scroll', requestScrollUpdate, { passive: true });
-  window.addEventListener('resize', requestScrollUpdate, { passive: true });
-  updateScrollMotion();
+  if (!reduceMotion && wordmark && chars.length) {
+    chars.forEach(char => char.classList.add('is-pending'));
+    requestAnimationFrame(start => animateWordmark(start, start));
+  } else {
+    chars.forEach(char => char.classList.add('is-decoded'));
+  }
+  window.addEventListener('scroll', updateScroll, { passive: true });
+  window.addEventListener('resize', updateScroll);
+  updateScroll();
 })();

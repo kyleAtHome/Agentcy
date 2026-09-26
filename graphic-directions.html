@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#eee9df" />
+  <title>Agentcy — Hero Graphic Directions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root{--bone:#eee9df;--ink:#111;--lime:#d9ff3f;--blue:#3347ff;--mono:'DM Mono',monospace;--sans:'Manrope',Arial,sans-serif}
+    *{box-sizing:border-box}body{margin:0;background:var(--bone);color:var(--ink);font-family:var(--sans)}
+    .page{max-width:1600px;margin:auto;padding:clamp(24px,5vw,76px)}
+    .top{display:flex;justify-content:space-between;align-items:start;border-bottom:1px solid #1113;padding-bottom:25px}
+    .brand{font-size:28px;font-weight:800;letter-spacing:-.095em}.brand b{color:var(--blue)}.brand sup{font-size:.6em;color:var(--blue);margin-left:2px}
+    .mono{font:10px/1.55 var(--mono);letter-spacing:.09em}.eyebrow{color:#555}
+    h1{font-size:clamp(46px,9vw,122px);letter-spacing:-.095em;line-height:.85;margin:clamp(55px,8vw,110px) 0 20px;font-weight:700}
+    .intro{font-size:16px;line-height:1.6;color:#555;max-width:540px;margin:0 0 48px}
+    .options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .option{border:1px solid #1113;min-width:0;background:#eee9df;position:relative;overflow:hidden}
+    .art{height:clamp(260px,34vw,460px);position:relative;display:grid;place-items:center;background:radial-gradient(circle at 50% 50%,#f7f5ef 0,#eee9df 67%,#eee9df 100%)}
+    svg{width:100%;height:100%;overflow:visible}.orbit{fill:none;stroke:var(--blue);stroke-width:1.2;opacity:.55}.fine{fill:none;stroke:#111;stroke-opacity:.23;stroke-width:1}.dash{stroke-dasharray:2 8;stroke-linecap:round}
+    .label{position:absolute;font:9px/1.5 var(--mono);letter-spacing:.07em;color:#555}.label.a{left:20px;top:18px}.label.b{right:20px;bottom:18px;text-align:right}.label strong{font-weight:400;color:var(--blue)}
+    .copy{padding:24px 25px 29px;border-top:1px solid #1112}.number{color:var(--blue);font-size:9px}.copy h2{font-size:clamp(23px,2.5vw,34px);letter-spacing:-.065em;margin:15px 0 8px}.copy p{font-size:13px;line-height:1.65;color:#5d5a54;max-width:380px;margin:0}.motion-note{display:inline-flex;align-items:center;gap:9px;margin-top:18px;color:#555}.motion-note i{display:block;width:7px;height:7px;background:var(--lime);border:1px solid var(--ink);border-radius:50%;animation:pulse 1.8s ease-in-out infinite}
+    .bloom-spin{transform-origin:300px 250px;animation:spin 26s linear infinite}.bloom-core{transform-origin:300px 250px;animation:breathe 4s ease-in-out infinite}.data-flow{stroke-dasharray:12 14;animation:flow 2.4s linear infinite}.data-flow.alt{animation-direction:reverse;animation-duration:3.2s}.ribbon-node{filter:drop-shadow(0 0 8px #d9ff3f88)}
+    .constellation-orbit{transform-origin:300px 250px;animation:spin 36s linear infinite}.constellation-core{transform-origin:300px 250px;animation:slow-pulse 3.6s ease-in-out infinite}.spark{transform-origin:center;animation:pulse 2.2s ease-in-out infinite}.spark:nth-child(2n){animation-delay:-.8s}
+    .genre{margin-top:clamp(90px,13vw,180px)}.genre h2{font-size:clamp(42px,7vw,90px);line-height:.9;letter-spacing:-.085em;margin:0 0 18px}.genre-intro{font-size:15px;line-height:1.6;color:#555;max-width:560px;margin:0 0 42px}.art-marathon{background:radial-gradient(circle at 50% 50%,#20232a 0,#101216 68%,#090a0d 100%);color:#eee9df}.art-marathon .label{color:#a5a8aa}.art-marathon .label strong{color:#e1ff35}.art-noir{background:linear-gradient(155deg,#11131c 0%,#171b2c 55%,#251526 100%);color:#eceaf3}.art-noir .label{color:#b1b0c1}.art-noir .label strong{color:#54d9ff}.art-cyber{background:radial-gradient(circle at 50% 48%,#2a1238 0,#130d20 50%,#0c0d16 100%);color:#f4efff}.art-cyber .label{color:#bab1ca}.art-cyber .label strong{color:#ff53cb}.noir-rain{stroke-dasharray:2 16;animation:rain 1.1s linear infinite}.noir-rain.slow{animation-duration:1.7s}.scanline{animation:scan 3.8s ease-in-out infinite}.circuit{stroke-dasharray:8 10;animation:flow 1.8s linear infinite}.neon-pulse{animation:neon 2s ease-in-out infinite}
+    @keyframes rain{to{stroke-dashoffset:-36;transform:translateY(28px)}}@keyframes scan{0%,100%{transform:translateY(-84px);opacity:0}20%,80%{opacity:.8}50%{transform:translateY(82px);opacity:.8}}@keyframes neon{0%,100%{opacity:.62;filter:drop-shadow(0 0 2px currentColor)}50%{opacity:1;filter:drop-shadow(0 0 12px currentColor)}}
+    @keyframes spin{to{transform:rotate(360deg)}}@keyframes flow{to{stroke-dashoffset:-52}}@keyframes pulse{0%,100%{opacity:.45;transform:scale(.86)}50%{opacity:1;transform:scale(1.12)}}@keyframes breathe{0%,100%{transform:scale(.97)}50%{transform:scale(1.035)}}@keyframes slow-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.045)}}
+    @media(max-width:900px){.options{grid-template-columns:1fr}.art{height:min(84vw,470px)}.copy{padding-inline:22px}.copy h2{font-size:32px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="top"><a class="brand" href="index.html">agent<b>cy</b><sup>°</sup></a><span class="mono eyebrow">AGENTCY / VISUAL STUDIES<br />ATL · 003 DIRECTIONS</span></header>
+    <h1>Three ways to<br />make intelligence move.</h1>
+    <p class="intro">Animated hero-art concepts for the Agentcy landing page. Each uses the same bone, ink, electric blue, and signal yellow palette, with a different motion language.</p>
+
+    <section class="options" aria-label="Animated hero graphic directions">
+      <article class="option">
+        <div class="art">
+          <span class="label a">01 / SIGNAL BLOOM<br /><strong>OPPORTUNITY → MOMENTUM</strong></span>
+          <span class="label b">FIELD ACTIVE<br />ATL / 33.7490° N</span>
+          <svg viewBox="0 0 600 500" role="img" aria-label="A glowing signal core with fine orbital rings and a traveling yellow beacon">
+            <defs><radialGradient id="bcore"><stop stop-color="#343943"/><stop offset=".56" stop-color="#151820"/><stop offset="1" stop-color="#05070b"/></radialGradient><radialGradient id="bnode"><stop stop-color="#f6ffad"/><stop offset=".47" stop-color="#d9ff3f"/><stop offset="1" stop-color="#9ebf18"/></radialGradient></defs>
+            <g class="bloom-spin"><ellipse class="orbit" cx="300" cy="250" rx="218" ry="77" transform="rotate(-26 300 250)"/><ellipse class="fine dash" cx="300" cy="250" rx="246" ry="116" transform="rotate(32 300 250)"/><ellipse class="orbit" cx="300" cy="250" rx="195" ry="149" transform="rotate(-58 300 250)" opacity=".28"/><circle cx="300" cy="250" r="4" fill="#3347ff"/><circle cx="300" cy="250" r="221" fill="none" stroke="#111" stroke-opacity=".15" stroke-dasharray="1 11"/></g>
+            <g class="bloom-core"><circle cx="300" cy="250" r="79" fill="url(#bcore)"/><circle cx="300" cy="250" r="87" fill="none" stroke="#3347ff" stroke-opacity=".55"/><circle cx="300" cy="250" r="96" fill="none" stroke="#111" stroke-opacity=".17" stroke-dasharray="1 7"/><path d="M257 250h86M300 207v86" stroke="#eee9df" stroke-opacity=".24"/><circle cx="300" cy="250" r="12" fill="#3347ff"/><circle cx="300" cy="250" r="4" fill="#d9ff3f"/></g>
+            <circle r="13" fill="url(#bnode)" class="ribbon-node"><animateMotion dur="8s" repeatCount="indefinite" path="M85 181C178 72 430 89 504 222S365 396 220 353 123 264 85 181Z"/></circle>
+            <path d="M82 250h83M435 250h83" stroke="#111" stroke-opacity=".27"/><rect x="75" y="244" width="14" height="14" fill="none" stroke="#3347ff"/><rect x="511" y="244" width="14" height="14" fill="#d9ff3f" stroke="#111"/>
+          </svg>
+        </div>
+        <div class="copy"><span class="mono number">DIRECTION 01</span><h2>Signal bloom</h2><p>A dark intelligence core opens like a field instrument. Thin orbital traces map possibilities while a yellow beacon continually finds the useful signal.</p><span class="motion-note mono"><i></i> ROTATION + ORBIT</span></div>
+      </article>
+
+      <article class="option">
+        <div class="art">
+          <span class="label a">02 / DATA RIVER<br /><strong>IDEA → SYSTEM → IMPACT</strong></span>
+          <span class="label b">FLOW RATE<br />CONTINUOUS / HUMAN-LED</span>
+          <svg viewBox="0 0 600 500" role="img" aria-label="A woven ribbon of blue and black data paths with a moving yellow signal">
+            <defs><linearGradient id="ribbonBlue" x1="0" x2="1"><stop stop-color="#3347ff" stop-opacity=".25"/><stop offset=".48" stop-color="#3347ff"/><stop offset="1" stop-color="#3347ff" stop-opacity=".35"/></linearGradient><linearGradient id="ribbonGold" x1="0" x2="1"><stop stop-color="#d9ff3f" stop-opacity="0"/><stop offset=".5" stop-color="#d9ff3f"/><stop offset="1" stop-color="#d9ff3f" stop-opacity="0"/></linearGradient></defs>
+            <g opacity=".52"><path class="fine" d="M73 117h454M73 165h454M73 213h454M73 261h454M73 309h454M73 357h454M73 405h454"/><path class="fine" d="M108 82v336M172 82v336M236 82v336M300 82v336M364 82v336M428 82v336M492 82v336"/></g>
+            <path d="M60 323C155 323 139 142 239 142S327 358 414 358 459 181 540 181" fill="none" stroke="#111" stroke-width="24" stroke-linecap="round" opacity=".94"/>
+            <path d="M60 323C155 323 139 142 239 142S327 358 414 358 459 181 540 181" fill="none" stroke="url(#ribbonBlue)" stroke-width="7" stroke-linecap="round" class="data-flow"/>
+            <path d="M60 323C155 323 139 142 239 142S327 358 414 358 459 181 540 181" fill="none" stroke="url(#ribbonGold)" stroke-width="2" stroke-linecap="round" class="data-flow alt"/>
+            <path id="riverpath" d="M60 323C155 323 139 142 239 142S327 358 414 358 459 181 540 181" fill="none" stroke="none"/>
+            <circle r="11" fill="#d9ff3f" stroke="#111" stroke-width="2" class="ribbon-node"><animateMotion dur="4.6s" repeatCount="indefinite" rotate="auto"><mpath href="#riverpath"/></animateMotion></circle>
+            <circle cx="60" cy="323" r="8" fill="#3347ff"/><rect x="531" y="172" width="18" height="18" fill="#eee9df" stroke="#111" stroke-width="2"/><path d="M530 181h20M540 171v20" stroke="#3347ff"/>
+            <text x="238" y="104" text-anchor="middle" fill="#555" font-family="DM Mono,monospace" font-size="9" letter-spacing="1.3">HUMAN INTENT</text>
+          </svg>
+        </div>
+        <div class="copy"><span class="mono number">DIRECTION 02</span><h2>Data river</h2><p>A single high-contrast ribbon bends through a quiet operational grid. Light runs along it like work moving from a first idea to a working system.</p><span class="motion-note mono"><i></i> FLOW + WEAVE</span></div>
+      </article>
+
+      <article class="option">
+        <div class="art">
+          <span class="label a">03 / LIVING NETWORK<br /><strong>PEOPLE AT THE CENTER</strong></span>
+          <span class="label b">NODES ONLINE<br />07 / 09 / ACTIVE</span>
+          <svg viewBox="0 0 600 500" role="img" aria-label="A living network of connected modular forms with a rotating center and moving signal nodes">
+            <g class="constellation-orbit"><ellipse cx="300" cy="250" rx="218" ry="82" transform="rotate(-21 300 250)" fill="none" stroke="#3347ff" stroke-width="1.3"/><ellipse cx="300" cy="250" rx="176" ry="135" transform="rotate(58 300 250)" fill="none" stroke="#111" stroke-opacity=".32" stroke-dasharray="2 8"/><path d="M91 178 194 114l106 136 120-137 88 128-133 145-181-33-103-175Z" fill="none" stroke="#111" stroke-opacity=".22"/></g>
+            <g class="constellation-core"><path d="m300 160 78 45v90l-78 45-78-45v-90z" fill="#111"/><path d="m300 160 78 45-78 45-78-45z" fill="#292d35"/><path d="M300 250v90l78-45v-90z" fill="#08090c"/><path d="M222 205l78 45v90l-78-45z" fill="#151820"/><path d="m300 160 78 45-78 45-78-45z" fill="none" stroke="#3347ff" stroke-width="1.4"/><circle cx="300" cy="250" r="7" fill="#d9ff3f"/><path d="M300 250 194 114M300 250l208-9M300 250l-103 175" stroke="#eee9df" stroke-opacity=".48" stroke-width="1"/></g>
+            <g fill="#eee9df" stroke="#111" stroke-width="1.5"><rect x="185" y="105" width="18" height="18"/><rect x="499" y="232" width="18" height="18"/><rect x="188" y="416" width="18" height="18"/><circle cx="415" cy="113" r="9" fill="#3347ff"/><circle cx="102" cy="178" r="8" fill="#d9ff3f"/><rect x="397" y="368" width="16" height="16" fill="#3347ff"/><circle cx="478" cy="342" r="7" fill="#d9ff3f"/></g>
+            <circle class="spark" cx="194" cy="114" r="4" fill="#d9ff3f"/><circle class="spark" cx="508" cy="241" r="4" fill="#d9ff3f"/><circle class="spark" cx="197" cy="425" r="4" fill="#d9ff3f"/>
+            <circle r="9" fill="#d9ff3f" stroke="#111" stroke-width="1.5"><animateMotion dur="9s" repeatCount="indefinite" path="M102 178Q235 58 415 113T508 241Q450 380 397 376T197 425Q110 346 102 178Z"/></circle>
+          </svg>
+        </div>
+        <div class="copy"><span class="mono number">DIRECTION 03</span><h2>Living network</h2><p>A faceted central engine connects to modular nodes around it. The orbit shifts slowly while active signals travel between people, decisions, and systems.</p><span class="motion-note mono"><i></i> SIGNAL ROUTING</span></div>
+      </article>
+    </section>
+
+    <section class="genre" aria-labelledby="genre-heading">
+      <span class="mono eyebrow">SECOND SET / CULT SCI-FI WORLDS</span>
+      <h2 id="genre-heading">Three more worlds.<br />Three new motion languages.</h2>
+      <p class="genre-intro">More atmospheric and game-like, with each direction pushing the Agentcy palette into a distinct visual world.</p>
+      <div class="options" aria-label="Sci-fi inspired animated directions">
+        <article class="option">
+          <div class="art art-marathon">
+            <span class="label a">04 / DEEP-FIELD PROTOCOL<br /><strong>SECTOR 07 · SIGNAL FOUND</strong></span>
+            <span class="label b">TACTICAL LINK<br />OPERATOR / ACTIVE</span>
+            <svg viewBox="0 0 600 500" role="img" aria-label="A tactical sci-fi signal diagram with a yellow target orbiting a black geometric relic">
+              <defs><linearGradient id="msteel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#555b65"/><stop offset=".48" stop-color="#22262e"/><stop offset="1" stop-color="#101216"/></linearGradient><radialGradient id="mglow"><stop stop-color="#eaff90"/><stop offset=".48" stop-color="#d9ff3f"/><stop offset="1" stop-color="#d9ff3f" stop-opacity="0"/></radialGradient></defs>
+              <g opacity=".3" stroke="#e9edf3" stroke-width="1"><path d="M300 58v54M300 388v54M81 250h65M454 250h65"/><path d="M127 90h44M127 90v44M473 90h-44M473 90v44M127 410h44M127 410v-44M473 410h-44M473 410v-44"/></g>
+              <circle cx="300" cy="250" r="173" fill="none" stroke="#9298a3" stroke-opacity=".46" stroke-dasharray="2 7"/><circle cx="300" cy="250" r="139" fill="none" stroke="#e9edf3" stroke-opacity=".16"/>
+              <g class="bloom-spin"><path d="M300 76 461 164v172l-161 88-161-88V164z" fill="none" stroke="#d9ff3f" stroke-width="1.5" stroke-opacity=".6"/><path d="M300 104 434 177v146l-134 73-134-73V177z" fill="none" stroke="#9298a3" stroke-dasharray="3 8"/><path d="M300 126v248M174 250h252" stroke="#d9ff3f" stroke-opacity=".25"/></g>
+              <path d="m300 160 70 40v100l-70 40-70-40V200z" fill="url(#msteel)" stroke="#737984"/><path d="m300 160 70 40-70 41-70-41z" fill="#626873" opacity=".55"/><path d="M300 241v99l70-40v-100z" fill="#090a0d"/><path d="M300 199v81" stroke="#d9ff3f" stroke-width="2"/><circle cx="300" cy="240" r="26" fill="#d9ff3f" opacity=".14"/><circle cx="300" cy="240" r="5" fill="#d9ff3f" class="neon-pulse"/>
+              <circle r="11" fill="url(#mglow)"><animateMotion dur="7s" repeatCount="indefinite" path="M118 250A182 182 0 1 1 482 250A182 182 0 1 1 118 250Z"/></circle>
+              <text x="300" y="466" text-anchor="middle" fill="#a5a8aa" font-family="DM Mono,monospace" font-size="8" letter-spacing="2">AUTONOMY IS A HUMAN DECISION</text>
+            </svg>
+          </div>
+          <div class="copy"><span class="mono number">DIRECTION 04 / TACTICAL SCI-FI</span><h2>Deep-field protocol</h2><p>Brutalist geometry, mission telemetry, and a high-visibility beacon. It gives the hero a disciplined game-interface energy without borrowing any game marks.</p><span class="motion-note mono"><i></i> RADAR SWEEP + LOCK</span></div>
+        </article>
+
+        <article class="option">
+          <div class="art art-noir">
+            <span class="label a">05 / RAIN CITY<br /><strong>AFTER HOURS / ATL</strong></span>
+            <span class="label b">SIGNAL IN THE WEATHER<br />VISIBILITY / LOW</span>
+            <svg viewBox="0 0 600 500" role="img" aria-label="A rain-soaked neon city skyline with a glowing blue horizon and flying signal light">
+              <defs><linearGradient id="nsky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#161a2c"/><stop offset=".65" stop-color="#25203a"/><stop offset="1" stop-color="#12131c"/></linearGradient><radialGradient id="nsun"><stop stop-color="#ff70d1" stop-opacity=".94"/><stop offset=".55" stop-color="#8c5cff" stop-opacity=".52"/><stop offset="1" stop-color="#54d9ff" stop-opacity="0"/></radialGradient><linearGradient id="nroad" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#54d9ff" stop-opacity=".2"/><stop offset="1" stop-color="#ff54c8" stop-opacity="0"/></linearGradient></defs>
+              <path d="M0 90h600v340H0z" fill="url(#nsky)"/><circle cx="354" cy="225" r="139" fill="url(#nsun)"/><circle cx="354" cy="225" r="75" fill="none" stroke="#54d9ff" stroke-opacity=".8"/><path d="M279 225h150M354 150v150" stroke="#ff70d1" stroke-opacity=".6"/>
+              <g fill="#10131b" stroke="#54d9ff" stroke-opacity=".55"><path d="M0 300h42v-90h32v56h27v-119h43v153h31v-75h34v99H0z"/><path d="M168 324h28V192h35v-60h45v192h25v-85h34v125H168z"/><path d="M377 345h27V184h39v-60h40v221h31v-121h28v-79h35v200H377z"/></g>
+              <g fill="#ff70d1" opacity=".85"><rect x="48" y="232" width="5" height="10"/><rect x="57" y="232" width="5" height="10"/><rect x="216" y="208" width="5" height="11"/><rect x="226" y="208" width="5" height="11"/><rect x="447" y="158" width="5" height="11"/><rect x="457" y="158" width="5" height="11"/><rect x="462" y="230" width="5" height="11"/><rect x="472" y="230" width="5" height="11"/></g>
+              <path d="M0 344 300 313l300 31v156H0z" fill="url(#nroad)"/><path d="M300 325v175M300 356 211 500M300 356l96 144" stroke="#54d9ff" stroke-opacity=".42"/><path d="M0 384h600M40 425h520M106 467h388" stroke="#ff70d1" stroke-opacity=".25"/>
+              <g fill="none" stroke="#54d9ff" stroke-width="1.2" class="noir-rain"><path d="M80 90v215M125 90v220M270 90v190M320 90v152M480 90v215M530 90v220M225 90v115M410 90v110"/></g>
+              <path class="scanline" d="M68 245h463" stroke="#54d9ff" stroke-opacity=".65" stroke-width="1"/>
+              <circle r="8" fill="#d9ff3f" stroke="#10131b" stroke-width="2"><animateMotion dur="6s" repeatCount="indefinite" path="M90 300Q195 225 280 260T460 286"/></circle>
+            </svg>
+          </div>
+          <div class="copy"><span class="mono number">DIRECTION 05 / NEON NOIR</span><h2>Rain city signal</h2><p>A cinematic skyline, wet reflections, and a lone signal cutting through the rain. This is the moodiest, most atmospheric direction—more nocturnal than the current brand system.</p><span class="motion-note mono"><i></i> RAIN + SCANLINE</span></div>
+        </article>
+
+        <article class="option">
+          <div class="art art-cyber">
+            <span class="label a">06 / GHOST IN THE GRID<br /><strong>NETWORK BREACH / 02:17</strong></span>
+            <span class="label b">ROUTE FOUND<br />HUMAN LOOP / ACTIVE</span>
+            <svg viewBox="0 0 600 500" role="img" aria-label="A neon cyberpunk circuit structure with a moving magenta and yellow data pulse">
+              <defs><radialGradient id="cportal"><stop stop-color="#ff53cb" stop-opacity=".68"/><stop offset=".3" stop-color="#3347ff" stop-opacity=".35"/><stop offset="1" stop-color="#130d20" stop-opacity="0"/></radialGradient><linearGradient id="cbeam" x1="0" x2="1"><stop stop-color="#ff53cb"/><stop offset=".5" stop-color="#b34dff"/><stop offset="1" stop-color="#35dcff"/></linearGradient></defs>
+              <circle cx="300" cy="250" r="195" fill="url(#cportal)"/><g opacity=".28" stroke="#aa9bbc" stroke-width="1"><path d="M84 110h432M84 160h432M84 210h432M84 260h432M84 310h432M84 360h432M84 410h432"/><path d="M120 82v336M180 82v336M240 82v336M300 82v336M360 82v336M420 82v336M480 82v336"/></g>
+              <path d="M105 347h70v-66h76v-84h98v-64h77v68h74" fill="none" stroke="#ff53cb" stroke-width="2" class="circuit"/><path d="M112 145h62v70h70v98h62v65h110v-52h72" fill="none" stroke="#35dcff" stroke-width="2" class="circuit" style="animation-direction:reverse"/><path d="M105 347h70v-66h76v-84h98v-64h77v68h74" fill="none" stroke="url(#cbeam)" stroke-width="9" stroke-opacity=".18"/>
+              <g class="constellation-core"><path d="m300 153 84 49v96l-84 49-84-49v-96z" fill="#151020" stroke="#ff53cb" stroke-width="1.4"/><path d="m300 153 84 49-84 48-84-48z" fill="#35203c"/><path d="M300 250v97l84-49v-96z" fill="#0a0b15"/><path d="M216 202l84 48v97l-84-49z" fill="#21142c"/><path d="M300 179v146M241 214l118 72m-118 0 118-72" stroke="#35dcff" stroke-opacity=".6"/></g>
+              <circle class="neon-pulse" cx="300" cy="250" r="8" fill="#d9ff3f"/><circle r="10" fill="#d9ff3f" stroke="#ff53cb" stroke-width="2"><animateMotion dur="3.8s" repeatCount="indefinite" path="M105 347h70v-66h76v-84h98v-64h77v68h74"/></circle>
+              <g fill="#ff53cb"><circle cx="175" cy="281" r="5"/><circle cx="251" cy="197" r="5"/><circle cx="423" cy="154" r="5"/></g><g fill="#35dcff"><circle cx="174" cy="215" r="5"/><circle cx="306" cy="313" r="5"/><circle cx="414" cy="358" r="5"/></g>
+            </svg>
+          </div>
+          <div class="copy"><span class="mono number">DIRECTION 06 / CYBERPUNK</span><h2>Ghost in the grid</h2><p>A layered circuit maze around a faceted core. Magenta and cyan paths race through the system while a yellow pulse marks the human-guided route.</p><span class="motion-note mono"><i></i> CIRCUIT PULSE + ROUTING</span></div>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

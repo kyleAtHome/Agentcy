@@ -13,4 +13,4 @@ Open `index.html` in a browser. The page uses Google Fonts when a network connec
 3. Under **Build and deployment**, choose **Deploy from a branch**, select the publishing branch (usually `main`) and the `/ (root)` folder, then save.
 4. GitHub Pages will provide the published URL. A custom domain such as `agentcy.com` can be connected later in the Pages settings after DNS is configured.
 
-The orbital graphic is original inline SVG. The blue orbital lines, signal-lime markers, black ribbon, scroll reveals, scroll progress indicator, and reduced-motion behavior are all implemented in the page itself.
+The hero graphic centers on a static, custom SVG eclipse oval with a detailed lime moon orbiting through and around it. Inline SVG supplies the planetary forms and orbital paths; scroll reveals, orbital motion, the scroll progress indicator, and reduced-motion behavior are implemented in the page itself.
